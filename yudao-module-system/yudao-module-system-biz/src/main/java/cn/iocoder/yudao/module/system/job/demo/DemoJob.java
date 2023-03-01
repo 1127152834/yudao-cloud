@@ -5,7 +5,7 @@ import com.xxl.job.core.handler.annotation.XxlJob;
 import org.springframework.stereotype.Component;
 
 @Component
-@TenantJob
+//@TenantJob
 public class DemoJob {
 
     @XxlJob("demoJob")

@@ -35,7 +35,8 @@ public class IdTypeEnvironmentPostProcessor implements EnvironmentPostProcessor 
         // 如果获取不到 DbType，则不进行处理
         DbType dbType = getDbType(environment);
         if (dbType == null) {
-            return;
+            //默认mysql
+            dbType = DbType.MYSQL;
         }
 
         // 设置 Quartz JobStore 对应的 Driver

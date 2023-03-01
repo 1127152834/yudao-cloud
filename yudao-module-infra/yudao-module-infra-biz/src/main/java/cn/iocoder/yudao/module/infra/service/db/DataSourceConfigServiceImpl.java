@@ -16,8 +16,7 @@ import java.util.List;
 import java.util.Objects;
 
 import static cn.iocoder.yudao.framework.common.exception.util.ServiceExceptionUtil.exception;
-import static cn.iocoder.yudao.module.infra.enums.ErrorCodeConstants.DATA_SOURCE_CONFIG_NOT_EXISTS;
-import static cn.iocoder.yudao.module.infra.enums.ErrorCodeConstants.DATA_SOURCE_CONFIG_NOT_OK;
+import static cn.iocoder.yudao.module.infra.enums.ErrorCodeConstants.*;
 
 /**
  * 数据源配置 Service 实现类
@@ -65,7 +64,9 @@ public class DataSourceConfigServiceImpl implements DataSourceConfigService {
     }
 
     private void validateDataSourceConfigExists(Long id) {
-        if (dataSourceConfigMapper.selectById(id) == null) {
+        if(id == 0){
+            throw exception(DATA_SOURCE_CANT_UPDATE);
+        }else if (dataSourceConfigMapper.selectById(id) == null) {
             throw exception(DATA_SOURCE_CONFIG_NOT_EXISTS);
         }
     }

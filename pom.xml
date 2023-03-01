@@ -8,15 +8,18 @@
     <version>${revision}</version>
     <packaging>pom</packaging>
     <modules>
+        <!--    基础模块    -->
         <module>yudao-dependencies</module>
         <module>yudao-gateway</module>
         <module>yudao-framework</module>
+        <module>yudao-nacos</module>
+        <module>yudao-xxl-job-admin</module>
+
+
         <!--  各种 module 拓展 -->
-<!--        <module>yudao-module-member</module>-->
         <module>yudao-module-bpm</module>
         <module>yudao-module-system</module>
         <module>yudao-module-infra</module>
-        <!--        <module>yudao-module-pay</module>-->
         <module>yudao-module-report</module>
     </modules>
 

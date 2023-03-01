@@ -88,7 +88,8 @@ public class CodegenServiceImpl implements CodegenService {
         table.setDataSourceConfigId(dataSourceConfigId);
         table.setScene(CodegenSceneEnum.ADMIN.getScene()); // 默认配置下，使用管理后台的模板
         table.setAuthor(userApi.getUser(userId).getCheckedData().getNickname());
-        codegenTableMapper.insert(table);
+        long tableId = codegenTableMapper.insert(table);
+        table.setId(tableId);
 
         // 构建 CodegenColumnDO 数组，插入到 DB 中
         List<CodegenColumnDO> columns = codegenBuilder.buildColumns(table.getId(), tableInfo.getFields());

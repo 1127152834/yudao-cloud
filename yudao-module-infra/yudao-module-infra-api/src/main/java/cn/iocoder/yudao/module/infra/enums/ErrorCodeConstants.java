@@ -53,5 +53,7 @@ public interface ErrorCodeConstants {
     // ========== 数据源配置 1001007000 ==========
     ErrorCode DATA_SOURCE_CONFIG_NOT_EXISTS = new ErrorCode(1001007000, "数据源配置不存在");
     ErrorCode DATA_SOURCE_CONFIG_NOT_OK = new ErrorCode(1001007001, "数据源配置不正确，无法进行连接");
+    ErrorCode DATA_SOURCE_CANT_UPDATE = new ErrorCode(1001007002, "master数据源不可修改和删除");
+
 
 }
